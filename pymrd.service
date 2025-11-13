@@ -1,0 +1,26 @@
+# sudo systemctl enable --system --now /home/recontwix/data/FIRE/Server/pymrd.service
+[Unit]
+Description=Python ISMRMRD Server for FIRE
+Documentation=https://github.com/kspaceKelvin/python-ismrmrd-server
+
+[Service]
+Type=simple
+User=recontwix
+WorkingDirectory=/home/recontwix/data/FIRE/Server/python-ismrmrd-server/
+ExecStart=uv run ./main.py -v -l /var/log/pymrd.log
+
+# if we wanted --user, wrap around venv
+#WorkingDirectory=/home/recontwix/data/FIRE/Server/
+#ExecStart=./run-server.sh -v
+
+Restart=on-failure
+RestartSec=3
+
+KillSignal=SIGURG
+TimeoutStopSec=43800
+
+[Install]
+WantedBy=multi-user.target
+
+# for --user, want default instead
+#WantedBy=default.target

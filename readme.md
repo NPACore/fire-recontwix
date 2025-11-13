@@ -5,6 +5,17 @@ See [`run-test.sh`](run-test.sh) for [`python-ismrmrd-server`](https://github.co
 ![](in/gre_dataset_image_0.gif)
 ![](out/gre_gre_group_image_0_FIRE.gif)
 
+### Running
+
+[`pymrd.service`](pymrd.service) (hard coded paths) runs and restarts the local MRD server using uv.
+
+TODO: consider setting `TMPDIR` to shared location (`/raidzeus/`?)
+
+Enabled like
+```
+sudo systemctl enable --system --now $PWD/pymrd.service
+```
+
 ## Auth
 See [`fire_identity/Makefile`](fire_identity/Makefile).
   * `fire_identity/id_rsa.ppk` should be transfered to console computer
