@@ -24,5 +24,8 @@ python-ismrmrd-server/:
 	#originally from git clone https://github.com/kspaceKelvin/python-ismrmrd-server
 	git submodule update --init --recursive
 
+fire_identity/id_rsa.ppk:
+	make -C $(dir $@) $(notdir $@)
+
 %/:
 	mkdir -p $@

@@ -1,2 +1,4 @@
 zips/
 out/*.h5
+fire_identity/id_rsa
+fire_identity/id_rsa.ppk
