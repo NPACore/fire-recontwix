@@ -1,0 +1,3 @@
+[submodule "python-ismrmrd-server"]
+	path = python-ismrmrd-server
+	url = https://github.com/kspaceKelvin/python-ismrmrd-server
