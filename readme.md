@@ -26,8 +26,23 @@ sudo systemctl enable --system --now $PWD/pymrd.service
 
 ### Auth
 
+Putty on windows scan console was used to generate `rsa_id*` (copied to `/mnt/TWIX_RAID/Prisma1/Moon/FIRE/id_rsa*`; 2025/11/17).
+> [NOTE!]
+> at least for `syngo MR E11`
+>  * `rsa_id` should be generated with `-b 2048` not `-b 4096` as documented!
+>  * Host key for ini is `RSA` not `ED25519` as documented!
+
 See [`fire_identity/Makefile`](fire_identity/Makefile).
   * `fire_identity/id_rsa.ppk` is the private key to be kept secret and only on the console computer
   * `fire_identity/id_rsa.pub` is public pair and goes into `~/.ssh/authorized_keys` for passwordless authentication
 
-Host key is `c0:29:1d:66:4e:65:c6:dd:44:fe:d0:14:9a:23:6b:1a` and is specified in  [`wip_1234b_fire_fire_mars_ssh.ini`](wip_1234b_fire_fire_mars_ssh.ini).
+Host key is `4f:9d:13:00:78:dc:e0:25:7f:37:fb:7d:35:8e:65:08` and is specified in  [`wip_1234b_fire_fire_mars_ssh.ini`](wip_1234b_fire_fire_mars_ssh.ini).
+
+Notes on key length
+```
+wc -l id_rsa linux_generated_bad/id_rsa /tmp/rsa2048
+  27 id_rsa
+  49 linux_generated_bad/id_rsa
+  27 /tmp/rsa2048
+```
+
