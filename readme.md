@@ -27,7 +27,7 @@ sudo systemctl enable --system --now $PWD/pymrd.service
 ### Auth
 
 Putty on windows scan console was used to generate `rsa_id*` (copied to `/mnt/TWIX_RAID/Prisma1/Moon/FIRE/id_rsa*`; 2025/11/17).
-> [NOTE!]
+> [!NOTE]
 > at least for `syngo MR E11`
 >  * `rsa_id` should be generated with `-b 2048` not `-b 4096` as documented!
 >  * Host key for ini is `RSA` not `ED25519` as documented!
