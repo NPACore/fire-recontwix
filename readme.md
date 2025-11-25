@@ -16,6 +16,20 @@ Enabled like
 sudo systemctl enable --system --now $PWD/pymrd.service
 ```
 
+## Multi-Tilt setup
+The tilt acquistion needs two (+ derived phase) acquisitions: fieldmap and mtilt bold.
+The python algorithm/config file will need to cache the GRE Fieldamp to later apply to the `bold_angle`.
+Matching protocol name looks like the best way to do this.
+
+```
+make test-datasets
+for f in in/*h5; do strings $f |grep protocol -i; done
+  <protocolName>GRE_FieldMap_LargeFOV</protocolName>
+  <protocolName>GRE_FieldMap_LargeFOV</protocolName>
+  <protocolName>a_ep2d_bold_ang_n40p20_2mm_ascend_incang</protocolName>
+```
+
+
 ## Scanner config
 
  1. `fire_identity/id_rsa.ppk` should be copied to `C:\Medcom\MriCustomer\ice\fire\`
