@@ -7,7 +7,7 @@ Documentation=https://github.com/kspaceKelvin/python-ismrmrd-server
 Type=simple
 User=recontwix
 WorkingDirectory=/home/recontwix/data/FIRE/Server/python-ismrmrd-server/
-ExecStart=uv run ./main.py -v -l /var/log/pymrd.log
+ExecStart=/usr/bin/uv run ./main.py -v -l /var/log/pymrd.log -p 9003
 
 # if we wanted --user, wrap around venv
 #WorkingDirectory=/home/recontwix/data/FIRE/Server/
